@@ -29,19 +29,19 @@ app.use('/tables', tableRoutes);
 app.use('/paymentintent', paymentIntent);
 app.use('/receipts', receiptRoutes);
 
-app.use(express.static('/home/jordan/lighthouse/projects/rest-aurant/client/build'));
-app.use(express.static('/home/jordan/lighthouse/projects/rest-aurant/restaurant/client/build'));
+app.use(express.static('/Users/tommyson/rest-aurant/client/build'));
+app.use(express.static('/Users/tommyson/rest-aurant/restaurant/client/build'));
 
 // MongoDB
 const CONNECTION_URL = process.env.CONNECTION_URL
 const PORT = process.env.PORT || 3001;
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join('/home/jordan/lighthouse/projects/rest-aurant/client/build', 'index.html'));
+  res.sendFile(path.join('/Users/tommyson/rest-aurant/client/build', 'index.html'));
 });
 
-app.get('/admin', function (req, res) {
-  res.sendFile(path.join('/home/jordan/lighthouse/projects/rest-aurant/restaurant/client/build', 'index.html'));
+app.get('/admin', function(req, res) {
+  res.sendFile(path.join('/Users/tommyson/rest-aurant/restaurant/client/build', 'index.html'));
 });
 
 mongoose.connect(CONNECTION_URL)
